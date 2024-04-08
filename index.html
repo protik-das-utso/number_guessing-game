@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/2598/2598890.png" type="image/x-icon">
+    <title>Number Guessing Game</title>
+</head>
+
+<body>
+    <header class="text-center bg-yellow-400 p-4">
+        <p class="text-lg font-bold">Guessing Game</p>
+    </header>
+    <div class="container mx-auto p-3">
+        <div class="welcome items-center justify-center text-center">
+            <p class="text-2xl">Welcome to Guessing Game</p>
+            <p class="mt-5 active" id="change-para">You will Guess Any Number
+                <span
+                    class="text-lg font-bold bg-yellow-100 pt-3 pb-3 pr-3 ml-3 rounded hover:bg-yellow-300 hover:text-black cursor-pointer">
+                    <span
+                        class="text-lg font-bold bg-yellow-200 p-3 mr-3 rounded hover:bg-yellow-600 hover:text-white cursor-pointer">From</span>
+                    1
+                </span>
+                <span
+                    class="text-lg font-bold bg-yellow-100 pt-3 pb-3 pr-3 rounded hover:bg-yellow-300 hover:text-black ml-5 cursor-pointer">
+                    <span
+                        class="text-lg font-bold bg-yellow-200 p-3 mr-2 rounded hover:bg-yellow-600 hover:text-white cursor-pointer">To</span>
+                    10
+                </span>
+            </p>
+            <p class="mt-5">You will get 3 changes to guess</p><br>
+            <button type="submit" class="p-3 bg-yellow-300 rounded-full px-10 mb-5 text-lg font-bold active"
+                id="start">Start</button><br>
+
+            <!-- After Starting Game -->
+            <div class="after-start hidden">
+                <div class="get hidden">
+
+                    <input type="number" name=""
+                        class="h-12 border-2 rounded-full px-2 text-center w-80 border-yellow-300 required:border-red-500 hover:border-yellow-300 focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500"
+                        id="input" placeholder="Enter Your Guessing Number">
+                    <button type="submit" class="p-3 bg-yellow-300 rounded-full px-10 mb-5 text-lg font-bold"
+                        id="check">Check</button><br>
+
+                </div>
+                <button type="submit" class="p-3 bg-green-400 rounded-full px-10 mb-5 text-lg font-bold hidden"
+                    id="win">WIN</button>
+                <div>
+                    <button type="submit" class="p-3 bg-orange-400 rounded-full px-10 mb-5 text-lg font-bold hidden"
+                        id="wrong">Wrong</button>
+                    <div class="big-small hidden pt-5">
+                        <span
+                            class="text-lg font-bold bg-yellow-200 p-3 rounded hover:bg-yellow-600 hover:text-white cursor-pointer">Hints</span>
+                        <span
+                            class="text-lg font-bold bg-yellow-100 p-3 rounded hover:bg-yellow-300 hover:text-black cursor-pointer"
+                            id="hints">
+
+                        </span>
+                    </div>
+
+                </div>
+                <button type="submit" class="p-3 bg-red-600 rounded-full px-10 mb-5 text-lg font-bold hidden"
+                    id="lose">LOSE</button><br>
+
+                <button type="submit" class="p-3 bg-green-400 rounded-full px-10 mb-5 text-lg font-bold hidden"
+                    id="correct-num"></button>
+
+
+
+                <div class="change mt-9 flex flex-row items-center justify-center text-center">
+                    <div class="flex flex-row">
+                        <span
+                            class="text-lg font-bold bg-yellow-200 p-3 rounded hover:bg-yellow-600 hover:text-white cursor-pointer">Attempt</span>
+                        <span
+                            class="text-lg font-bold bg-yellow-100 p-3 mr-5 rounded hover:bg-yellow-300 hover:text-black cursor-pointer"
+                            id="attempt">
+                            0
+                        </span>
+
+                    </div>
+                    <div class="flex flex-row">
+                        <span
+                            class="text-lg font-bold bg-yellow-200 p-3 rounded hover:bg-yellow-600 hover:text-white cursor-pointer">Change
+                            Left</span>
+                        <span
+                            class="text-lg font-bold bg-yellow-100 p-3 rounded hover:bg-yellow-300 hover:text-black cursor-pointer"
+                            id="left">
+                            3
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Again play -->
+            <div class="again-play hidden">
+                <button type="reset"
+                    class="p-3 bg-yellow-600 rounded-full px-10 mb-5 mt-12 text-white text-lg font-bold"
+                    id="check">Again play</button><br>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
