@@ -4,6 +4,7 @@ let after_start = document.querySelector(".after-start");
 let get = document.querySelector(".get");
 
 let win = document.getElementById("win");
+let win_wrong_show = document.querySelector(".win-wrong-show");
 let wrong = document.getElementById("wrong");
 let lose = document.getElementById("lose");
 let attempt = document.getElementById("attempt");
@@ -94,8 +95,10 @@ function win_show() {
     again_play.classList.remove("hidden");
     again_play.classList.add("active");
 
-    let win_wrong_show = document.querySelector(".win-wrong-show");
-    console.log("win");
+    celebrate();
+}
+
+function celebrate() {
     win_wrong_show.classList.add(
         "bg-[url('./4M57.gif')]",
         "h-auto",
@@ -124,26 +127,6 @@ function lose_show() {
     correct_num.innerHTML = `Correct Number : ${random}`;
     again_play.classList.remove("hidden");
     again_play.classList.add("active");
-
-    let win_wrong_show = document.querySelector(".win-wrong-show");
-    console.log("win");
-    win_wrong_show.classList.add(
-        "bg-[url('wrong.gif')]",
-        "h-auto",
-        "bg-no-repeat",
-        "bg-cover"
-    );
-    setTimeout(
-        () =>
-            win_wrong_show.classList.remove(
-                "bg-[url('wrong.gif')]",
-                "h-1/2",
-                "bg-no-repeat",
-                "bg-cover",
-                "w-1/2"
-            ),
-        4000
-    );
 }
 function again_start_game() {
     attempt_num = 0;
@@ -174,6 +157,13 @@ function again_start_game() {
 
     const hints = document.getElementById("hints");
     hints.innerHTML = "";
+
+    win_wrong_show.classList.remove(
+        "bg-[url('./4M57.gif')]",
+        "h-auto",
+        "bg-no-repeat",
+        "bg-cover"
+    );
 
     attempt.textContent = attempt_num;
     left.textContent = left_num;
