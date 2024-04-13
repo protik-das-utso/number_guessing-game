@@ -93,6 +93,27 @@ function win_show() {
     correct_num.innerHTML = `Correct Number : ${random}`;
     again_play.classList.remove("hidden");
     again_play.classList.add("active");
+
+
+    let win_wrong_show = document.querySelector(".win-wrong-show");
+    console.log("win");
+    win_wrong_show.classList.add(
+        "bg-[url('./4M57.gif')]",
+        "h-auto",
+        "bg-no-repeat",
+        "bg-cover"
+    );
+    setTimeout(
+        () =>
+            win_wrong_show.classList.remove(
+                "bg-[url('./4M57.gif')]",
+                "h-auto",
+                "bg-no-repeat",
+                "bg-cover"
+            ),
+        4000
+    );
+
 }
 
 function lose_show() {
@@ -105,9 +126,29 @@ function lose_show() {
     correct_num.innerHTML = `Correct Number : ${random}`;
     again_play.classList.remove("hidden");
     again_play.classList.add("active");
+
+    let win_wrong_show = document.querySelector(".win-wrong-show");
+    console.log("win");
+    win_wrong_show.classList.add(
+        "bg-[url('wrong.gif')]",
+        "h-auto",
+        "bg-no-repeat",
+        "bg-cover"
+    );
+    setTimeout(
+        () =>
+            win_wrong_show.classList.remove(
+                "bg-[url('wrong.gif')]",
+                "h-1/2",
+                "bg-no-repeat",
+                "bg-cover",
+                "w-1/2"
+            ),
+        4000
+    );
 }
 function again_start_game() {
-    // Reset attempt and left numbers
+
     attempt_num = 0;
     left_num = 3;
 
@@ -115,7 +156,7 @@ function again_start_game() {
     change_para.classList.remove("hidden");
     change_para.classList.add("active");
 
-    // Hide game outcome elements
+
     win.classList.add("hidden");
     win.classList.remove("active");
     lose.classList.add("hidden");
@@ -123,7 +164,7 @@ function again_start_game() {
     again_play.classList.add("hidden");
     again_play.classList.remove("active");
 
-    // Show initial game setup elements
+
     start.classList.remove("hidden");
     start.classList.add("active");
     after_start.classList.add("hidden");
@@ -134,14 +175,14 @@ function again_start_game() {
     correct_num.classList.remove("active");
     correct_num.classList.add("hidden");
 
-    // Clear input field
+
     document.getElementById("input").value = "";
 
-    // Clear any hint messages
+
     const hints = document.getElementById("hints");
     hints.innerHTML = "";
 
-    // Update attempt and left numbers display
+
     attempt.textContent = attempt_num;
     left.textContent = left_num;
 }
