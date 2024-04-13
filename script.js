@@ -94,7 +94,6 @@ function win_show() {
     again_play.classList.remove("hidden");
     again_play.classList.add("active");
 
-
     let win_wrong_show = document.querySelector(".win-wrong-show");
     console.log("win");
     win_wrong_show.classList.add(
@@ -113,7 +112,6 @@ function win_show() {
             ),
         4000
     );
-
 }
 
 function lose_show() {
@@ -148,7 +146,6 @@ function lose_show() {
     );
 }
 function again_start_game() {
-
     attempt_num = 0;
     left_num = 3;
 
@@ -156,14 +153,12 @@ function again_start_game() {
     change_para.classList.remove("hidden");
     change_para.classList.add("active");
 
-
     win.classList.add("hidden");
     win.classList.remove("active");
     lose.classList.add("hidden");
     lose.classList.remove("active");
     again_play.classList.add("hidden");
     again_play.classList.remove("active");
-
 
     start.classList.remove("hidden");
     start.classList.add("active");
@@ -175,13 +170,10 @@ function again_start_game() {
     correct_num.classList.remove("active");
     correct_num.classList.add("hidden");
 
-
     document.getElementById("input").value = "";
-
 
     const hints = document.getElementById("hints");
     hints.innerHTML = "";
-
 
     attempt.textContent = attempt_num;
     left.textContent = left_num;
